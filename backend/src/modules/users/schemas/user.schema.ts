@@ -3,7 +3,7 @@ import { HydratedDocument } from 'mongoose'; //ODM - Object Document Mapper
 
 export type UserDocument = HydratedDocument<User>;
 
-@Schema({ timestamps: true })
+@Schema({ timestamps: true }) 
 export class User {
 	@Prop({ unique: true, required: true, lowercase: true, trim: true })
 	email: string;
