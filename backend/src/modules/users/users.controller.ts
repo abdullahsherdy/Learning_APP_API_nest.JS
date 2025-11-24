@@ -9,6 +9,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 export class UsersController {
 	constructor(private readonly usersService: UsersService) {}
 
+	// create is used to create a new user(signup)
 	@Post()
 	create(@Body() dto: CreateUserDto) {
 		return this.usersService.create(dto);

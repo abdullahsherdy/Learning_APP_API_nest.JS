@@ -11,6 +11,7 @@ export class UsersService {
 
 	constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocument>) {}
 
+	// create is used to create a new user(signup) 
 	async create(dto: CreateUserDto) {
 		const passwordHash = await bcrypt.hash(dto.password, 10);
 		try {

@@ -16,6 +16,9 @@ export class User {
 
 	@Prop({ type: [String], default: ['student'] })
 	roles: string[];
+
+	@Prop({ select: false, default: null })
+	refreshTokenHash?: string | null;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

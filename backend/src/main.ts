@@ -6,10 +6,13 @@ import { AppModule } from './app.module';
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 
+	// CORS for future frontend integrations
+	app.enableCors();
+
 	app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
 	const config = new DocumentBuilder()
-		.setTitle('Learn API')
+		.setTitle('Learning APP API')
 		.setDescription('Nest + Mongo API')
 		.setVersion('1.0')
 		.addBearerAuth()
